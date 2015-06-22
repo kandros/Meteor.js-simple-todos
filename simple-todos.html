@@ -12,10 +12,13 @@
       <input type="checkbox" checked="{{hideCompleted}}">
         Hide Completed Tasks
       </label>
+      {{> loginButtons}}
 
+    {{#if currentUser}}
       <form class="new-task">
         <input type="text" name="text" placeholder="Type to add to tasks">
       </form>
+    {{/if}}
     </header>
 
     <ul>
@@ -32,6 +35,6 @@
 
     <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
 
-    <span class="text">{{text}}</span>
+    <span class="text"><stron>{{username}}</stron> - {{text}}</span>
   </li>
 </template>

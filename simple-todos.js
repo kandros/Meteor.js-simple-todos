@@ -24,10 +24,12 @@ if (Meteor.isClient) {
     "submit .new-task" : function (event) {
 
       var text = event.target.text.value;
-
+  
       Tasks.insert({
         text: text,
-        createdAt: new Date()
+        createdAt: new Date(),
+        owned: Meteor.userId(),
+        username: Meteor.user().username
       });
 
       // Clear Form
@@ -52,6 +54,11 @@ if (Meteor.isClient) {
     }
   });
 
+
+
+Accounts.ui.config({
+  passwordSignupFields: "USERNAME_ONLY"
+});
 
 
 }
