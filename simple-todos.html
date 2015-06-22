@@ -30,6 +30,17 @@
 </body>
 
 <template name="task">
+    
+  {{#if isOwner}}
+  <button class="toggle-private">
+    {{#if private}}
+      Private
+    {{else}}
+      Public
+    {{/if}}
+  </button>
+  {{/if}}
+
   <li class="{{#if checked}}checked{{/if}}">
     <button class="delete">&times;</button>
 
